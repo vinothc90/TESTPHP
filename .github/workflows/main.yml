@@ -1,0 +1,12 @@
+name: ci container
+on: push
+
+jobs:
+  build-test:
+    runs-on: ubuntu-16.04
+    container:
+      image: php:7.2.34-zts-alpine3.12
+    steps:
+         - name: Log the php version
+           run: |
+             php -v 
