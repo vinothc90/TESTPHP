@@ -3,7 +3,7 @@ on: push
 
 jobs:
   build-test:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     container:
       image: php:7.2.34-zts-alpine3.12
     steps:
