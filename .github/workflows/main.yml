@@ -1,6 +1,35 @@
-name: ci container
-on: push
+name: build-and-test
+on: [push]
+
 jobs:
-  hello_world_job:
-    uses: actions/ubuntu-php-test@v1
-    name: A job to say hello
+  build-and-test:
+    runs-on: ubuntu-18.04
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: false
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: eot_test
+        ports:
+          - 3306/tcp
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+      redis:
+        image: redis
+        options: --health-cmd "redis-cli ping" --health-interval=10s --health-timeout=5s --health-retries=3
+        ports:
+          - 6379:6379
+      php:
+        image: php:7.2.34-zts-alpine3.12
+
+    steps:
+      - name: Install OS Packages
+        run: sudo apt install --allow-downgrades libxml2=2.9.3+dfsg1-1 libssl1.0.0=1.0.2g-1ubuntu4 libssl-dev=1.0.2g-1ubuntu4 libgnutls-openssl27 libxmlsec1-openssl ssl-cert libmcrypt-dev libxrender1 libfontconfig libpng-dev openssl
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
