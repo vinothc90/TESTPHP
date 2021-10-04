@@ -23,9 +23,6 @@ jobs:
         image: php:7.2.34-zts-alpine3.12
 
     steps:
-      - name: Install OS Packages
-        run: sudo apt install --allow-downgrades libxml2=2.9.3+dfsg1-1 libssl1.0.0=1.0.2g-1ubuntu4 libssl-dev=1.0.2g-1ubuntu4 libgnutls-openssl27 libxmlsec1-openssl ssl-cert libmcrypt-dev libxrender1 libfontconfig libpng-dev openssl
-
       - name: Checkout
         uses: actions/checkout@v2
 
