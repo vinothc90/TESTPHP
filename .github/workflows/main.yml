@@ -2,11 +2,7 @@ name: ci container
 on: push
 
 jobs:
-  build-test:
-    runs-on: ubuntu-latest
-    container:
-      image: php:7.2.34-zts-alpine3.12
-    steps:
-         - name: Log the php version
-           run: |
-             php -v 
+  build-test: 
+    runs-on:
+      using: 'docker'
+      image: '../Dockerfile'         
