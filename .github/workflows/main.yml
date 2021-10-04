@@ -1,8 +1,6 @@
 name: ci container
 on: push
 
-jobs:
-  build-test: 
-    runs-on:
-      using: 'docker'
-      image: '../Dockerfile'         
+runs:
+  using: 'docker'
+  image: '../Dockerfile         
