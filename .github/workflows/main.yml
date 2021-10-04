@@ -1,6 +1,6 @@
 name: ci container
 on: push
-
-runs:
-  using: 'docker'
-  image: '../Dockerfile'
+jobs:
+  hello_world_job:
+    uses: actions/TESTPHP@v1
+    name: A job to say hello
