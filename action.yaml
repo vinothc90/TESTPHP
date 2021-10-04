@@ -1,0 +1,6 @@
+# action.yml
+name: 'Ubuntu Installation'
+description: 'Ubuntu docker image'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
