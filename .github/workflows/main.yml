@@ -44,7 +44,7 @@ jobs:
           python-version: 3.8
 
       - name: Install mcrypt
-        run: sudo pecl install mcrypt-1.0.1
+        run: php -v
 
       - name: Start mysql service
         run: sudo /etc/init.d/mysql start
