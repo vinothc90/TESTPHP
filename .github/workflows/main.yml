@@ -25,7 +25,6 @@ jobs:
           extensions: mbstring, xml, ctype, iconv, intl, mysql, redis, soap, zip, pdo_mysql
           tools: composer:v1, pecl
           ini-set: "extension=mcrypt.so"
-        options: --health-cmd "php -v" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - name: Install OS Packages
         run: sudo apt install --allow-downgrades libxml2=2.9.4+dfsg1-6.1ubuntu1 libssl1.1 libssl-dev libgnutls-openssl27 libxmlsec1-openssl ssl-cert libmcrypt-dev libxrender1 libfontconfig libpng-dev openssl
@@ -37,7 +36,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '10.x'
-      
+
       - name: Setup Python
         uses: actions/setup-python@master
         with:
