@@ -30,6 +30,9 @@ jobs:
       - name: Install OS Packages
         run: sudo apt install --allow-downgrades libxml2=2.9.4+dfsg1-6.1ubuntu1 libssl1.1 libssl-dev libgnutls-openssl27 libxmlsec1-openssl ssl-cert libmcrypt-dev libxrender1 libfontconfig libpng-dev openssl
 
+      - name: Check ubuntu version
+        run: lsb_release -a
+
       - name: Checkout
         uses: actions/checkout@v2
 
