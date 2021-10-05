@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - name: Install OS Packages
-        run: sudo apt install --allow-downgrades libxml2=2.9.4+dfsg1-6.1ubuntu1 libssl1.0.0=1.0.2n-1ubuntu5.6 libssl-dev=1.1.0g-2ubuntu4 libgnutls-openssl27 libxmlsec1-openssl ssl-cert libmcrypt-dev libxrender1 libfontconfig libpng-dev openssl
+        run: sudo apt install --allow-downgrades libxml2=2.9.4+dfsg1-6.1ubuntu1 libssl1.0.0=1.0.2n-1ubuntu5 libssl-dev=1.1.0g-2ubuntu4 libgnutls-openssl27 libxmlsec1-openssl ssl-cert libmcrypt-dev libxrender1 libfontconfig libpng-dev openssl
 
       - name: Checkout
         uses: actions/checkout@v2
