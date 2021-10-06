@@ -34,5 +34,5 @@ jobs:
         run: cat /etc/*-release
  
       - name: Check php version
-        run: php -v  
+        run: php --version  
     
