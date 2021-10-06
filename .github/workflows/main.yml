@@ -8,5 +8,5 @@ jobs:
         image: ubuntu:16.04
     steps:
       - name: Check Ubuntu version
-        run: cat /etc/debian_version
+        run: cat /etc/*-release
     
