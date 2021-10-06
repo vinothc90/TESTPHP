@@ -4,8 +4,7 @@ on: [push]
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-    services:
-      ubuntu:
+    container:
         image: ubuntu:16.04
     steps:
       - name: Check Ubuntu version
