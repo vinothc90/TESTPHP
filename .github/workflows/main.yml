@@ -23,7 +23,9 @@ jobs:
         ports:
           - 6329:6379
       php:
-        image: php:7.2.34-zts-alpine3.12
+        image: php:7.2.34-alpine
+        ports:
+          - 80:80    
         env:
           php-version: '7.2.34'
           extensions: mbstring, xml, ctype, iconv, intl, mysql, redis, soap, zip, pdo_mysql
@@ -32,7 +34,9 @@ jobs:
     steps:
       - name: Check Ubuntu version
         run: cat /etc/*-release
- 
-      - name: Check php version
-        run: php --version  
+        
+      - name: Check PHP version
+        run: |
+          php -v
+          php -m  
     
