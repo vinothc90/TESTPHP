@@ -35,13 +35,13 @@ jobs:
       - name: Check Ubuntu version
         run: cat /etc/*-release
  
-      - name: Check Redis version
-        run: |
-          redis-cli -v  
-
       - name: Check MYSQL version
         run: |
-          mysqld --version   
+          mysql --version   
+
+      - name: Check Redis version
+        run: |
+          redis-cli -v
 
       - name: Check PHP version
         run: |
