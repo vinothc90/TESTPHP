@@ -20,7 +20,7 @@ jobs:
         image: redis
         options: --health-cmd "redis-cli ping" --health-interval=10s --health-timeout=5s --health-retries=3
         ports:
-          - 6329:6379
+          - 6379:6379
       php:
         image: php:7.2.34-alpine
         ports:
@@ -33,7 +33,10 @@ jobs:
     steps:
       - name: Check Ubuntu version
         run: cat /etc/*-release
- 
+
+      - name: Start mysql service
+        run: sudo /etc/init.d/mysql start
+
       - name: Check MYSQL version
         run: |
           mysql --version   
