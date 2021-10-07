@@ -34,6 +34,11 @@ jobs:
       - name: Check Ubuntu version
         run: cat /etc/*-release
 
+      - name: Install sudo
+        run: |
+          apt-get update
+          apt-get install -y sudo
+        
       - name: Start mysql service
         run: sudo /etc/init.d/mysql start
 
