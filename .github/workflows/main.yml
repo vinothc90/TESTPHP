@@ -34,7 +34,15 @@ jobs:
     steps:
       - name: Check Ubuntu version
         run: cat /etc/*-release
-        
+
+      - name: Check MYSQL version
+        run: |
+          mysql -v
+ 
+      - name: Check Redis version
+        run: |
+          redis-cli -v     
+
       - name: Check PHP version
         run: |
           php -v
