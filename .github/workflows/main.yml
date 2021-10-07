@@ -37,7 +37,7 @@ jobs:
 
       - name: Check MYSQL version
         run: |
-          mysql -v
+          mysqld --version
  
       - name: Check Redis version
         run: |
